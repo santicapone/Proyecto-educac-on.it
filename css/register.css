@@ -1,0 +1,96 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* El título externo al formulario */
+main h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.card input,
+.card select {
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  color: #333333;
+  outline: none;
+  font-family: inherit;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.card input:focus,
+.card select:focus {
+  border-color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+.card button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.card button[type="submit"]:hover {
+  background-color: #222222;
+}
+
+.card button[type="submit"]:active {
+  transform: scale(0.98);
+}

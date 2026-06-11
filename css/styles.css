@@ -1,0 +1,651 @@
+:root {
+  /* Colores */
+  --color-primary: white;
+  --color-secondary: white;
+  --color-terciary: white;
+  --color-accent: white;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f9fafb;
+  --color-border: #e5e7eb;
+
+  /* Tipografía */
+  --font-primary: "Inter", sans-serif;
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+
+  /* Espaciado */
+  --spacing-sm: 0.5rem; /*  8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+
+  /* Bordes */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transiciones */
+  --transition: 0.2s ease;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Breakpoints de referencia */
+/* sm:  640px  — teléfonos grandes en horizontal */
+/* md:  768px  — tablets                         */
+/* lg:  1024px — laptops                         */
+/* xl:  1280px — desktops                        */
+
+/* Ejemplo mobile-first */
+
+a {
+  text-decoration: none;
+  color: BLACK;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--color-primary);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.main-nav {
+  background-color: var(--color-terciary);
+  display: flex;
+  justify-content: space-between;
+
+  padding: 15px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  ul {
+    display: flex;
+
+    gap: var(--spacing-md);
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.logos {
+  width: 50px;
+  height: 50px;
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .div-menu {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      justify-content: center;
+      display: flex;
+      color: var(--text-color);
+      flex-direction: column;
+      text-align: center;
+      padding-top: 50px;
+
+      .mas-comprado {
+        width: 500px;
+      }
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--color-terciary);
+    color: var(--color-text-light);
+  }
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-image-container {
+  height: 100vh;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 5px;
+  padding: 20px;
+  color: white;
+  margin-top: 7px;
+}
+.product-section {
+  background-color: var(--color-secondary);
+
+  padding: 20px;
+
+  .product-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+      flex: 0 0 320px;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-primary);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        /* Hacemos hover en la card */
+
+        .card-header {
+          a.details {
+            bottom: 0;
+          }
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .card-header {
+        position: relative;
+        overflow: hidden;
+        height: 300px; /* 1. Aumentamos la altura para albergar prendas completas (puedes usar entre 350px y 420px) */
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          padding: 10px;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .badge {
+          background-color: var(--bg-danger);
+          color: var(--color-primary);
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          padding: 2px 6px;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 10px;
+          border-radius: 6px;
+          z-index: 2;
+        }
+
+        a.details {
+          width: 100%;
+          padding: 8px;
+          text-align: center;
+          background-color: var(--secondary-color);
+          color: var(--color-primary);
+          position: absolute;
+          bottom: -46px;
+          left: 0;
+          right: 0;
+          font-size: 12px;
+          transition: bottom 0.3s ease;
+          z-index: 2;
+
+          &:hover {
+            background-color: var(--primary-color);
+          }
+        }
+      }
+
+      .card-body {
+        padding: 16px 16px 8px;
+        color: var(--primary-color);
+        flex: 1;
+
+        .category {
+          font-size: 8px;
+          color: var(--color-disabled);
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+
+        .name {
+          font-size: 16px;
+          font-weight: 800;
+          letter-spacing: -1px;
+          margin: 6px 0;
+        }
+
+        .description {
+          font-size: 12px;
+          color: var(--color-disabled);
+          display: -webkit-box;
+
+          overflow: hidden;
+          height: 36px;
+        }
+
+        .tags-container {
+          display: flex;
+          gap: 8px;
+
+          .tag {
+            font-size: 10px;
+            padding: 2px 4px;
+            background-color: #eeeeee;
+            border-radius: 6px;
+            margin: 4px 0;
+          }
+        }
+
+        .info-container {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 0;
+          align-items: center;
+          border-bottom: 1px solid #eeeeee;
+
+          .button {
+            background: rgb(104, 95, 240);
+            font-weight: 600;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            color: white;
+            &:hover {
+              background-color: black;
+            }
+          }
+
+          .price-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .discount {
+              font-size: 10px;
+              color: var(--color-disabled);
+              text-decoration: line-through;
+            }
+            .price {
+              font-weight: 1000;
+            }
+          }
+        }
+      }
+
+      .card-footer {
+        padding: 8px 16px 16px;
+        display: flex;
+        justify-content: right;
+
+        .star-container {
+          font-size: 10px;
+          color: #eeeeee;
+
+          .filled {
+            color: gold;
+          }
+        }
+
+        .stock {
+          color: var(--color-success);
+          font-size: 10px;
+          font-weight: 600;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+/* Estilos Generales del Footer */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 40px 20px 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Comportamiento Mobile */
+  gap: 30px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 15px;
+  position: relative;
+  font-weight: 600;
+}
+
+/* Columna 1: Marca */
+.footer-brand .logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  height: 40px; /* Ajusta según el tamaño de tu logo */
+  width: auto;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.brand-description {
+  color: #a0a0a0;
+  max-width: 300px;
+}
+
+/* Columna 2: Redes Sociales */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #3b82f6; /* Color de acento al pasar el cursor */
+}
+
+/* Columna 3: Contacto */
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 10px;
+  color: #a0a0a0;
+}
+
+.footer-contact a {
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #3b82f6;
+}
+
+/* Barra Inferior */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+}
+
+/* --- DISEÑO DESKTOP (Media Query) --- */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row; /* Se transforma en columnas */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-column {
+    flex: 1;
+    padding: 0 15px;
+  }
+
+  .footer-column:first-child {
+    padding-left: 0;
+  }
+
+  .footer-column:last-child {
+    padding-right: 0;
+  }
+}
+
+.social-links a:hover,
+.footer-contact a:hover {
+  color: #006241 !important;
+}
+
+/* 2. Adaptación del Navbar para Mobile */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .nav-left ul li a,
+  .nav-right ul li a {
+    font-size: 13px;
+    padding: 5px;
+  }
+}
+
+/* 3. Adaptación del Banner Hero (Evita que rompa la pantalla en vertical) */
+@media (max-width: 768px) {
+  .hero-image-container {
+    height: 60vh; /* Reduce la altura en celulares para mejor usabilidad */
+  }
+
+  .hero-content {
+    width: 85%;
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+/* 4. Adaptación de la Sección "Lo más comprado del mes" (Apilado Vertical) */
+@media (max-width: 768px) {
+  .section-wrapper .div-menu {
+    flex-direction: column !important; /* Obliga a ponerse uno abajo del otro */
+    padding: 20px;
+  }
+
+  .section-wrapper .div-menu div {
+    padding-top: 20px;
+  }
+
+  .section-wrapper .div-menu div .mas-comprado {
+    width: 100% !important; /* La imagen ocupa el ancho del celular sin desbordar */
+    height: auto;
+    margin-top: 20px;
+  }
+  .footer-container {
+    flex-direction: column; /* Se apilan verticalmente */
+    text-align: center;
+    gap: 35px;
+  }
+
+  .footer-brand .logo-wrapper {
+    justify-content: center; /* Centra el logo de Lompas */
+  }
+
+  .footer-brand .brand-description {
+    margin: 0 auto;
+  }
+
+  .social-links {
+    align-items: center; /* Centra los links en mobile */
+  }
+
+  .footer-contact ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    order: 2;
+  }
+
+  .nav-left {
+    ul {
+      display: none;
+    }
+  }
+
+  .nav-left .logos {
+    display: block;
+    height: 50px;
+    width: auto;
+  }
+
+  .nav-left ul.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    background-color: red;
+    padding: 20px;
+  }
+
+  .nav-right {
+    ul {
+      display: none;
+    }
+  }
+}
+
+/* 5. Adaptación del Grillado de Productos (Cards en 1 columna para celulares) */
+@media (max-width: 576px) {
+  .product-section {
+    padding: 10px;
+  }
+
+  .product-section .product-container {
+    grid-template-columns: 1fr !important; /* Fuerza una sola columna impecable */
+    padding: 0;
+  }
+
+  .product-section .product-container .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Ajustes de botones absolutos dentro de la card para que no se pisen */
+  .product-section .product-container .card .card-body .info-container .button {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-section .product-container .card .card-body .info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* 6. Comportamiento del Footer en Mobile (Asegura las 3 columnas apiladas) */
