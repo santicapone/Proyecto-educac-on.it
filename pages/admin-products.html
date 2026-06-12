@@ -1,9 +1,415 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lompas</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="stylesheet" href="/css/register.css" />
+
+    <link rel="stylesheet" href="/css/admin-products.css" />
+
+    <link rel="icon" type="image/png" href="/assets/images/Lompas-logo.png" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="navbar">
+        <nav class="main-nav">
+          <button class="hamburger">☰</button>
+          <div class="nav-left">
+            <img
+              class="logos"
+              src="/assets/images/Lompas-logo.png"
+              alt="Logo del usuario"
+            />
+            <ul>
+              <li><a href="/">Principal</a></li>
+              <li><a href="/pages/products.html">Productos</a></li>
+              <li><a href="/pages/register.html">Registro</a></li>
+              <li><a href="/pages/contact.html">Contacto</a></li>
+              <li><a href="/pages/about.html">Acerca de</a></li>
+              <li>
+                <a href="/pages/admin-products.html">Admin productos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <ul>
+              <li>
+                <img
+                  class="logos"
+                  src="/assets/images/logo-usuario.png"
+                  alt="Logo del usuario"
+                />
+              </li>
+              <li><a href="/pages/login.html">Iniciar sesión</a></li>
+              <li><a href="/pages/register.html">Registrarse</a></li>
+              <li><a href="/pages/cart.html">🛒</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="div-main">
+        <h2>Ingreso de nuevo producto</h2>
+        <form class="card">
+          <div>
+            <label for="nombre">Foto del producto:</label>
+            <input
+              type="file"
+              name="foto"
+              id=""
+              placeholder="ingresa una foto del producto"
+              required
+              accept="image/"
+            />
+          </div>
+
+          <div>
+            <label for="email">Nombre del producto:</label>
+            <input
+              type="text"
+              name="product-name"
+              id=""
+              placeholder="Nombre del producto"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Descripción del producto:</label>
+            <input
+              type="text"
+              name="product-description"
+              id=""
+              placeholder="Ingresa una descripción"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="fecha-nacimiento">Fecha de ingreso del producto:</label>
+            <input type="date" id="" name="entry-date" required />
+          </div>
+
+          <div>
+            <label for="password">Precio:</label>
+            <input
+              type="number"
+              name="price"
+              id=""
+              placeholder="Ingresa un precio"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Stock:</label>
+            <input
+              type="number"
+              name="stock"
+              id=""
+              placeholder="Ingresa el stock"
+              required
+            />
+          </div>
+
+          <div>
+            <button type="submit">Agregar producto</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Fecha de ingreso</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Apparis abrigo texturizado .webp"
+                  alt="Abrigo Texturizado Apparis"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Abrigo Texturizado Apparis</td>
+              <td>
+                Abrigo elegante con textura premium, ideal para días fríos.
+              </td>
+              <td class="text-nowrap">12-05-2026</td>
+              <td class="product-price">$45.990</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Blusa Nanette Lepore Para Mujer Con Cuentas.webp"
+                  alt="Blusa Nanette Lepore"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Blusa Nanette Lepore</td>
+              <td>
+                Blusa con cuentas y detalles sofisticados para ocasiones
+                especiales.
+              </td>
+              <td class="text-nowrap">28-04-2026</td>
+              <td class="product-price">$38.500</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Prenda Para Mujer American Rag Con Cordón Estampado A Rayas .webp"
+                  alt="American Rag Rayas"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">American Rag Rayas</td>
+              <td>Prenda casual con estampado a rayas y cordón ajustable.</td>
+              <td class="text-nowrap">15-05-2026</td>
+              <td class="product-price">$22.000</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Pop Trading Pantalón DRS Denim Light Grey Denim.webp"
+                  alt="Pantalón DRS Denim"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Pantalón DRS Denim</td>
+              <td>Jeans modernos en denim gris claro, cómodos y versátiles.</td>
+              <td class="text-nowrap">02-06-2026</td>
+              <td class="product-price">$35.200</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Polo Tommy Hilfiger Para Hombres De Secado Rápido Con Protección Uv Y.webp"
+                  alt="Polo Tommy Hilfiger"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Polo Tommy Hilfiger</td>
+              <td>
+                Polo de secado rápido con protección UV, ideal para el día a
+                día.
+              </td>
+              <td class="text-nowrap">10-06-2026</td>
+              <td class="product-price">$42.800</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/OEM Custom Ropa Plaid Short Sleeve Men Casual Fashion Checkered Shirt.webp"
+                  alt="Camisa Cuadrillé"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Camisa Cuadrillé</td>
+              <td>Camisa casual de manga corta con estampado a cuadros.</td>
+              <td class="text-nowrap">22-05-2026</td>
+              <td class="product-price">$19.500</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Retro Antiguo 1950s Vestidos Vestido swing Mujer Carnaval Mascarada Ropa Cotidiana Despedida de Soltera Adulto Vestido Vestidos de fiesta.webp"
+                  alt="Vestido Retro 1950s"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Vestido Retro 1950s</td>
+              <td>
+                Vestido swing estilo vintage, perfecto para fiestas y eventos.
+              </td>
+              <td class="text-nowrap">05-06-2026</td>
+              <td class="product-price">$29.900</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src="/assets/images/Suéter Polo De Manga Larga Mode Of One Para Hombre En Negro Profundo.webp"
+                  alt="Chaqueta Impermeable"
+                  class="table-img"
+                />
+              </td>
+              <td class="product-name">Chaqueta Impermeable</td>
+              <td>
+                Protección total contra la lluvia con diseño urbano moderno.
+              </td>
+              <td class="text-nowrap">09-06-2026</td>
+              <td class="product-price">$54.000</td>
+              <td>
+                <div class="actions-container">
+                  <button class="btn-action btn-edit" type="button">
+                    Editar
+                  </button>
+                  <button class="btn-action btn-delete" type="button">
+                    Borrar
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column footer-brand">
+          <div class="logo-wrapper">
+            <img
+              src="/assets/images/Lompas-logo.png"
+              alt="Logo de la empresa"
+              class="footer-logo"
+            />
+            <span class="brand-name">Lompas</span>
+          </div>
+          <p class="brand-description">
+            Creando soluciones digitales con un diseño cuidado y funcional.
+          </p>
+        </div>
+
+        <div class="footer-column footer-socials">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@misitio.com">info@misitio.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+1234567890">+123 456 7890</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MiSitio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
 </html>

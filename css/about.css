@@ -1,0 +1,37 @@
+.nav-right {
+  display: none;
+}
+
+.div-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-right {
+  display: block;
+}
