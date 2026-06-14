@@ -2,7 +2,7 @@
   /* Colores */
   --color-primary: white;
   --color-secondary: white;
-  --color-terciary: white;
+  --color-terciary: rgb(119, 119, 119);
   --color-accent: white;
   --color-text: #1f2937;
   --color-text-light: #6b7280;
@@ -57,7 +57,7 @@ a {
   text-decoration: none;
   color: BLACK;
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-terciary);
   }
 }
 
@@ -79,7 +79,7 @@ header {
   z-index: 100;
 }
 .main-nav {
-  background-color: var(--color-terciary);
+  background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -359,28 +359,26 @@ ul {
 
 .services-section {
   display: flex;
-  justify-content: space-around; /* Distribuye el espacio uniformemente */
+  justify-content: space-around;
   align-items: center;
   padding: 40px 20px;
-  background-color: #f9f9f9; /* Fondo sutil para separar del grillado */
+  background-color: #f9f9f9;
   border-top: 1px solid #eee;
 }
 
 /* Cada tarjeta de característica */
 .services-item {
   display: flex;
-  align-items: center; /* Alinea el ícono al centro del texto */
-  gap: 15px; /* Espacio entre el ícono y el texto */
-  flex: 1; /* Hace que todos los elementos midan lo mismo */
+  align-items: center;
+  gap: 15px;
+  flex: 1;
   max-width: 300px;
 }
 
-/* Estilos del ícono */
 .services-icon {
-  font-size: 2.5rem; /* Tamaño del ícono */
+  font-size: 2.5rem;
 }
 
-/* Estilos del texto */
 .services-text h3 {
   margin: 0 0 5px 0;
   font-size: 1.1rem;
